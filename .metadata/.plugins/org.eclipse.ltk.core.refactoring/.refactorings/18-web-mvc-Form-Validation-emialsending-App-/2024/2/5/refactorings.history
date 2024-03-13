@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;18-web-mvc-Form-Validation-emialsending-App-/src/main/resources/templates/index.html&apos; to &apos;contact.html&apos;" description="Rename resource &apos;index.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/templates/index.html" name="contact.html" stamp="1706779230519" updateReferences="true"/>
+</session>

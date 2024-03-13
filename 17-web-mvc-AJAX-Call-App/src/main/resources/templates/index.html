@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX Form Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<h1>AJAX Form Example</h1>
+
+<form id="sumForm">
+	<table>
+		<tr>
+    <label for="num1">Number 1:</label>
+    <input type="number" id="num1" name="num1" required>
+    <br></tr>
+    <tr>
+    <label for="num2">Number 2:</label>
+    <input type="number" id="num2" name="num2" required>
+    <br></tr>
+    <button type="submit">Calculate Sum</button>
+</table>
+</form>
+
+<div id="result"></div>
+
+<script>
+    $(document).ready(function () {
+        $("#sumForm").submit(function (event) {
+            event.preventDefault();
+
+            var formData = {
+                num1: $("#num1").val(),
+                num2: $("#num2").val()
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "/calculate-sum",
+                data: formData,
+                success: function (data) {
+                    $("#result").text(data);
+                },
+                error: function () {
+                    $("#result").text("Error occurred.");
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
